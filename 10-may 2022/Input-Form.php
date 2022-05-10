@@ -8,21 +8,8 @@
 </head>
 <body>  
 
-<?php
-
-$name = $email = $gender = $comment = $website = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = ($_POST["name"]);
-  $email = ($_POST["email"]);
-  $website = ($_POST["website"]);
-  $comment = ($_POST["comment"]);
-  $gender = ($_POST["gender"]);
-}
-
-?>
-
 <h2>PHP Form Validation Example</h2>
+
 <form method="post">  
   Name: <input type="text" name="name" placeholder="Enter your Name">
   <br><br>
@@ -40,6 +27,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <input type="submit" name="submit" value="Submit">  
 </form>
 
+<?php
+
+$name = "";
+$email = "";
+$gender = "";
+$comment = "";
+$website = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = ($_POST["name"]);
+  $email = ($_POST["email"]);
+  $website = ($_POST["website"]);
+  $comment = ($_POST["comment"]);
+  $gender = ($_POST["gender"]);
+}
+
+?>
 
 <?php
 echo "<h2>Output</h2>";
