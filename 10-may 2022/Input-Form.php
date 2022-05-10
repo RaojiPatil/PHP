@@ -8,7 +8,7 @@
 </head>
 <body>  
 
-<h2>PHP Form Validation Example</h2>
+<h2>PHP Form</h2>
 
 <form method="post">  
   Name: <input type="text" name="name" placeholder="Enter your Name">
