@@ -1,31 +1,13 @@
 <?php
-/**
- * DNG Loader.
- *
- * @package domain-name-generator
- */
+
 
 if ( ! class_exists( 'Class_Instagram' ) ) :
 
-	/**
-	 * Class_Instagram
-	 *
-	 */
 	class Class_Instagram {
 
-		/**
-		 * Instance
-		 *
-		 * @access private
-		 * @var object Class Instance.
-		 */
 		private static $instance;
 
-		/**
-		 * Initiator
-		 *
-		 * @return object initialized object of class.
-		 */
+
 		public static function get_instance() {
 			if ( ! isset( self::$instance ) ) {
 				self::$instance = new self;
@@ -33,23 +15,14 @@ if ( ! class_exists( 'Class_Instagram' ) ) :
 			return self::$instance;
 		}
 
-		/**
-		 * Constructor
-		 *
-		 */
 		public function __construct() {
 
 			$this->feed_output();
 
 		}
 
-        /**
-		 * Include files
-		 *
-		 * @return void
-		 */
 		public function get_instagram_data() {
-            $fields = "id,caption,media_url,permalink,thumbnail_url,username" ;
+            $fields = "media_url,permalink,username" ;
             $token = "IGQVJWYmVCSFl3M0NDeGVnN0ZAiM1RvTTZAwT1k2Q1hxd2JtaEpYWWJSeUcySHpWN0ZAJcHdSLXNxY2VKRFg2d1JEZADFWVC0xZAVdveGpqRS1mdVI5RGNBenRoS1Y3WkVFZAXVlTkdnX0U1MFVGSFdYenA5NwZDZD";
             $limit = 6;
             $json_feed_url="https://graph.instagram.com/me/media?fields={$fields}&access_token={$token}&limit={$limit}";
@@ -81,7 +54,6 @@ if ( ! class_exists( 'Class_Instagram' ) ) :
                             $media_url = isset( $post[ "media_url" ] ) ? $post["media_url"] :"";
                             $permalink = isset($post["permalink"]) ? $post["permalink"] : "";
                             $username = isset($post["username"]) ? $post["username"] : "";
-                            $caption = isset($post["caption"]) ? $post["caption"] : "";
 
                             ?>
                             
